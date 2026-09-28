@@ -1,0 +1,37 @@
+# Your own inputs. Message exports and broker price files are yours alone: they name
+# people and sources, and a price export may not be yours to redistribute.
+data/raw/*
+!data/raw/demo/
+data/prices/**
+!data/prices/ctrader/
+data/prices/ctrader/*
+!data/prices/ctrader/XAGUSD_M1.csv
+!data/prices/ctrader/XAUUSD_M1.csv
+
+# Account-specific broker contract specifications.
+data/prices/ctrader/_specs.csv
+
+# Everything the engine writes while running. data/parsed/ and the dump files keep
+# message text and ids, so they are private even when the run was not.
+data/parsed/
+stocks/data/
+*.pnl.csv
+*.open.json
+
+# Credentials. Whatever you use to obtain messages needs one; it never belongs in a
+# repository.
+.token
+*.token
+.env
+*.env
+
+# Python / editors / OS
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.vscode/
+.idea/
+~$*
+.DS_Store
+Thumbs.db
