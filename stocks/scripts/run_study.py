@@ -474,7 +474,7 @@ def main():
         with io.open(args.dump_open, "w", encoding="utf-8") as fh:
             fh.write(json.dumps(payload, ensure_ascii=False, indent=1))
 
-    print("\n=== result, %s onward ===" % args.since)
+    print("\n=== result%s ===" % ((", %s onward" % args.since) if args.since else ""))
     print("  unit (full position)      $%s" % format(args.unit, ",.0f"))
     print("  commission                $%.3f/share, $%.2f floor" % (args.per_share, args.min_commission))
     print("  half-spread charged       %.1f bps per action" % args.spread_bps)

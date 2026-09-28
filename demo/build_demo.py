@@ -277,7 +277,8 @@ def main():
     ):
         doc = doc.replace(key, val)
     io.open(OUT, "w", encoding="utf-8", newline="\n").write(doc)
-    print("wrote %s (%.1f KB)" % (os.path.relpath(OUT, ROOT), len(doc) / 1024.0))
+    print("wrote %s (%.1f KB)" % (os.path.relpath(OUT, ROOT),
+                                  len(doc.encode("utf-8")) / 1024.0))
     for k, v in stats:
         print("  %-22s %d" % (k, v))
 
